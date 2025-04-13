@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-drivers": "nodemon drivers.js",
-    "start-passengers": "nodemon passengers.js"
+    "start-passengers": "nodemon passengers.js",
+    "start-trips": "nodemon trips.js"
   },
   "repository": {
     "type": "git",

@@ -38,6 +38,7 @@ app.post('/passengers/signup', async (req, res) => {
   //  "name": name,
   //  "phone_number": phone_number,
   //  "password": password,
+  //  "profile_picture": String,
   //  "authintication_document_type": authintication_document_type,
   //  "authintication_document_number": authintication_document_number,
   //  "registration_date": registration_date, "is_online": is_online,
@@ -52,7 +53,7 @@ app.post('/passengers/signup', async (req, res) => {
   //  "current_trip_id": current_trip_id,
   //  "scheduled_trip_id": scheduled_trip_id,
   //   }
-  const { name, phone_number, password, authintication_document_type, authintication_document_number, registration_date, is_online, is_searching, requested_trip, requested_seat, preferred_seat, front_seat_preferred_price, back_seat_preferred_price, location, current_trip_id, scheduled_trip_id } = req.body;
+  const { name, phone_number, password, profile_picture, authintication_document_type, authintication_document_number, registration_date, is_online, is_searching, requested_trip, requested_seat, preferred_seat, front_seat_preferred_price, back_seat_preferred_price, location, current_trip_id, scheduled_trip_id } = req.body;
   try {
     //check if the passenger already exists
     const existingDriver = await Passenger.findOne({ name, phone_number });
@@ -64,6 +65,7 @@ app.post('/passengers/signup', async (req, res) => {
       name,
       phone_number,
       password,
+      profile_picture: String,
       authintication_document_type,
       authintication_document_number,
       registration_date,

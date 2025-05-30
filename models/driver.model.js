@@ -4,6 +4,7 @@ const DriverSchema = mongoose.Schema({
     name: String,
     phone_number: String,
     password: String,
+    profile_picture: String,
     authintication_document_type: String,
     authintication_document_number: String,
     registration_date: Date,

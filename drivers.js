@@ -38,6 +38,7 @@ app.post('/drivers/signup', async (req, res) => {
   //  "name": name,
   //  "phone_number": phone_number,
   //  "password": password,
+  //  "profile_picture": String,
   //  "authintication_document_type": authintication_document_type,
   //  "authintication_document_number": authintication_document_number,
   //  "registration_date": registration_date, "is_online": is_online,
@@ -62,7 +63,7 @@ app.post('/drivers/signup', async (req, res) => {
   //  "scheduled_trip_id": scheduled_trip_id,
   //  "is_verified": is_verified
   //  }
-  const { name, phone_number, password, authintication_document_type, authintication_document_number, registration_date, rating, trip_count, roads, car, car_model, car_color, car_plate_number, car_capacity, car_type, car_picture, available_seats, seats_prices, services, location, is_available, is_online, is_in_trip, current_trip_id, scheduled_trip_id } = req.body;
+  const { name, phone_number, password, profile_picture, authintication_document_type, authintication_document_number, registration_date, rating, trip_count, roads, car, car_model, car_color, car_plate_number, car_capacity, car_type, car_picture, available_seats, seats_prices, services, location, is_available, is_online, is_in_trip, current_trip_id, scheduled_trip_id } = req.body;
   try {
     // Check if phone number or name already exists in the database
     const existingDriver = await Driver.findOne({ name, phone_number });
@@ -74,6 +75,7 @@ app.post('/drivers/signup', async (req, res) => {
       name,
       phone_number,
       password,
+      profile_picture,
       authintication_document_type,
       authintication_document_number,
       registration_date,
